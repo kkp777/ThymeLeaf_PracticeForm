@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="color:yellow ;background-color:red">
+	<p th:text="${msg}"/>
+	<form th:action="@{/product}" th:object="${product}" method="POST">
+		<div style="text-align:center">
+		<center>
+		<table style="color:aqua ;background-color:green">
+			<tr>
+				<td>Product ID</td>
+				<td><input type="text" th:field="*{pId}" /></td>
+				<td th:if="${#fields.hasErrors('pId')}" th:errors="*{pId}">Id is Required</td>
+			</tr>
+			<tr>
+				<td>Product Name</td>
+				<td><input type="text" th:field="*{pName}" /></td>
+				<td th:if="${#fields.hasErrors('pName')}" th:errors="*{pName}">Id is Required</td>
+				
+			</tr>
+			<tr>
+				<td>Product Price</td>
+				<td><input type="text" th:field="*{Price}" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Submit"/></td>
+			</tr>
+		
+		</table>
+		</center>
+	
+		</div>
+	
+	</form>
+</body>
+</html>
