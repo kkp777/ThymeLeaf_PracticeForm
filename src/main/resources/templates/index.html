@@ -5,7 +5,9 @@
 <title>Insert title here</title>
 </head>
 <body style="color:yellow ;background-color:red">
+	<center>
 	<p th:text="${msg}"/>
+	</center>
 	<form th:action="@{/product}" th:object="${product}" method="POST">
 		<div style="text-align:center">
 		<center>
